@@ -8,9 +8,10 @@ class Shoes:
     def get_shoes_list(self):
         return self.shoes_list
 
-    def add_shoes(self, gender: str, shoe_type:str, color:str, prise: int or float, manufacturer:str, size:int, filename ):
+    def add_shoes(self, gender: str, shoe_type: str, color: str, prise: int or float, manufacturer: str, size: int,
+                  filename):
         data = {'Тип обуви: ': gender, 'Вип обуви: ': shoe_type, 'Цвет: ': color,
-                'Цена: ': prise, 'Производитель: ': manufacturer, 'Размер: ': size,}
+                'Цена: ': prise, 'Производитель: ': manufacturer, 'Размер: ': size, }
         self.shoes_list.append(data)
         self.update_json(filename)
 
@@ -35,5 +36,3 @@ class Shoes:
 #     shoe.add_shoes('Женская','Сандали','Бежевый',1000, 'Birkenstock',36, filename)
 #     print(shoe.get_shoes_list())
 #     print(shoe.get_full_prise())
-
-
