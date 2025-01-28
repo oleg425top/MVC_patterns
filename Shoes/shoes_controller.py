@@ -7,7 +7,7 @@ class ShoesController:
         return f'Добро пожаловать на склад обуви!!{self.model.__class__.__name__}'
 
     def get_shoes_list_auth(self, user_roll='user'):
-        self.get_default_action()
+        print(self.get_default_action())
         if user_roll == 'admin':
             return self.model.get_shoes_list()
         elif user_roll:
@@ -26,7 +26,7 @@ class ShoesController:
     """выбор только женской обуви"""
 
     def get_only_female_shoes(self):
-        self.get_default_action()
+        print(self.get_default_action())
         female_shoes = []
         data = self.model.get_shoes_list()
         for elem in data:
@@ -37,7 +37,7 @@ class ShoesController:
     """выбор только мужской обуви"""
 
     def get_only_male_shoes(self):
-        self.get_default_action()
+        print(self.get_default_action())
         male_shoes = []
         data = self.model.get_shoes_list()
         for elem in data:
@@ -49,14 +49,15 @@ class ShoesController:
     def add_shoes(self,gender: str, shoe_type: str, color: str, prise: int or float, manufacturer: str, size: int,
                   article, filename, user_roll='user'):
         if user_roll == 'admin':
-            self.get_default_action()
+            print(self.get_default_action())
             return self.model.add_shoes(gender, shoe_type, color, prise, manufacturer,article, filename)
         else:
+            print(self.get_default_action())
             return 'У вас нет прав доступа для данной операции!!!'
 
     def get_full_prise(self, user_roll):
         if user_roll == 'admin':
-            self.get_default_action()
+            print(self.get_default_action())
             return self.model.get_full_prise()
         else:
             return 'У вас нет прав доступа для данной операции!!!'

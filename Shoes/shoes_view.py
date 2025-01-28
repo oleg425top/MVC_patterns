@@ -20,18 +20,16 @@ class ShoesView:
         female = self.controller.get_only_male_shoes()
         print(f'Подборка только мужской обуви со склада:\n{female}')
 
-    def display_add_shoes(self,gender, shoe_type, color, prise, manufacturer,article, filename, user_roll='user'):
+    def display_add_shoes(self, gender, shoe_type, color, prise, manufacturer, article, filename, user_roll='user'):
         result = self.controller.add_shoes(gender, shoe_type, color, prise, manufacturer, article, filename, user_roll)
         if result == 'У вас нет прав доступа для данной операции!!!':
             print(result)
         else:
             print(result)
+
     def display_get_full_prise(self, user_roll):
         result = self.controller.get_full_prise(user_roll)
         if result == 'У вас нет прав доступа для данной операции!!!':
             print(result)
         else:
             print(result)
-
-
-
