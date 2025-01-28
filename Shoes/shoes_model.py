@@ -9,9 +9,9 @@ class Shoes:
         return self.shoes_list
 
     def add_shoes(self, gender: str, shoe_type: str, color: str, prise: int or float, manufacturer: str, size: int,
-                  filename):
-        data = {'Тип обуви: ': gender, 'Вип обуви: ': shoe_type, 'Цвет: ': color,
-                'Цена: ': prise, 'Производитель: ': manufacturer, 'Размер: ': size, }
+                  article, filename):
+        data = {'Тип обуви: ': gender, 'Вид обуви: ': shoe_type, 'Цвет: ': color,
+                'Цена: ': prise, 'Размер: ': size, 'Производитель: ': manufacturer, 'Артикул: ': article}
         self.shoes_list.append(data)
         self.update_json(filename)
 
@@ -26,13 +26,13 @@ class Shoes:
         print('Общая стоимость: ')
         return full_prise
 
-# if __name__ == '__main__':
-#     filename = r'shoes.json'
-#     shoe = Shoes()
-#     shoe.get_shoes_list()
-#     shoe.add_shoes('Мужская','Кроссовки','Черный',5000, 'Nike',42, filename)
-#     shoe.add_shoes('Мужская','Туфли','Серый',6000, 'Clarks',43, filename)
-#     shoe.add_shoes('Женская','Сапоги','Красный',10000, 'Timberland',37, filename)
-#     shoe.add_shoes('Женская','Сандали','Бежевый',1000, 'Birkenstock',36, filename)
-#     print(shoe.get_shoes_list())
-#     print(shoe.get_full_prise())
+if __name__ == '__main__':
+    filename = r'shoes.json'
+    shoe_list = Shoes()
+    shoe_list.get_shoes_list()
+    shoe_list.add_shoes('Мужская', 'Кроссовки', 'Черный', 5000, 'Nike', 42, 'NK-12345', filename)
+    shoe_list.add_shoes('Мужская', 'Туфли', 'Серый', 6000, 'Clarks', 43, 'CL-23456', filename)
+    shoe_list.add_shoes('Женская', 'Сапоги', 'Красный', 10000, 'Timberland', 37, 'TB-67890', filename)
+    shoe_list.add_shoes('Женская', 'Сандали', 'Бежевый', 1000, 'Birkenstock', 36, 'BK-78901', filename)
+    print(shoe_list.get_shoes_list())
+    print(shoe_list.get_full_prise())
