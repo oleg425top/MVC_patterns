@@ -1,4 +1,3 @@
-from shoes_model import Shoes
 class ShoesController:
 
     def __init__(self, model):
